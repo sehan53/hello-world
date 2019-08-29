@@ -4,8 +4,6 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Template For iSchool Program</title>
-		
-		
 		<style>
 			body {font-family: Arial, Helvetica, sans-serif;}
 			form {border: 3px solid #f1f1f1;}
@@ -73,8 +71,6 @@
 			  }
 			}
 		</style>
-
-
 	<head>
 	<body>
 		<h2>template For iSchool Program Only</h2>
@@ -84,22 +80,22 @@
 		  <div class="container">
 
 		    <label for="uname"><b>iSchool name, University name</b><i>*</i></label>
-		    <input type="text" ng-model="name"  id="uname" placeholder="iSchool name, University name" required>
+		    <input type="text" id="uname" placeholder="iSchool name, University name" name="uname" required>
 
 		    <label for="pname"><b>Full title of the program</b><i>*</i></label>
-		    <input type="text" id="pname" placeholder="Full title of the program" required>
+		    <input type="text" id="pname" placeholder="Full title of the program" name="pname" required>
 
 		    <label for="urlname"><b>URL of the Program webpage</b><i>*</i></label>
-		    <input type="text" id="urlname" placeholder="URL of the Program webpage" required>
+		    <input type="text" id="urlname" placeholder="URL of the Program webpage" name="urlname" required>
 
 		    <label for="hname"><b>DH program host - institution name</b><i>*</i></label>
-		    <input type="text" id="hname" placeholder="DH program host - institution name" required>
+		    <input type="text" id="hname" placeholder="DH program host - institution name" name="hname" required>
 		    
 		    <label for="tname"><b>Time (since year XXXX)</b><i>*</i></label>
-		    <input type="text" id="tname" placeholder="Time (since year XXXX)" required>
+		    <input type="text" id="tname" placeholder="Time (since year XXXX)" name="tname" required>
 
 		    <label for="cname"><b>Contact (name and email)</b><i>*</i></label>
-		    <input type="text" id="cname" placeholder="Contact and email" required>
+		    <input type="text" id="cname" placeholder="Contact and email" name="cname" required>
 
 		    <label for="eLevel"><b>Education level</b></label> 
 		    <select id="eLevel" name="eLevel">
@@ -160,7 +156,7 @@
 		    </select>
 
 
-		    <button>Submit</button><button type="reset" value="Reset">Reset</button>
+		    <button>Submit</button>
 
 		  </div>
 
