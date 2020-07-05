@@ -34,14 +34,39 @@
 
         }
     </style>
+    <script type="text/javascript">
+
+			function onclickButton(button){
+			    alert("test");
+				value2=button.value;
+				innerHTML='<br />';
+				if(value2=="New"){
+				     innerHTML='';
+					 innerHTML+=' <iframe frameborder="0"  allowfullscreen src="googleForm_v2.html"></iframe>';
+
+					document.getElementById('iFrameData').innerHTML= innerHTML;
+				}
+				if(value2=="Plan"){
+                    innerHTML='';
+					 innerHTML+=' <iframe frameborder="0"  allowfullscreen src="planningForm.html"></iframe>';
+
+					document.getElementById('iFrameData').innerHTML= innerHTML;
+				}
+			}
+</script>
 </head>
 <body>
 
 <div class="h_iframe">
 <br/>
-  
-    <iframe frameborder="0"  allowfullscreen src="https://htmlpreview.github.io/?https://github.com/sehan53/hello-world/blob/master/googleForm_v2.html"></iframe>
-
+      <button type="button" onclick="onclickButton(this)" value="Plan"  align="middle">
+    Click here to input Planning DATA!
+    </button>
+    <div id="iFrameData" class="h_iframe">
+        <iframe frameborder="0"  allowfullscreen src="googleForm_v2.html"></iframe>
+    </div>
+    <!--<iframe frameborder="0"  allowfullscreen src="https://htmlpreview.github.io/?https://github.com/sehan53/hello-world/blob/master/googleForm_v2.html"></iframe>
+    -->
 </div>
 
 </body>
