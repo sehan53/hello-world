@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+          background-repeat: repeat;
+          background-position: left top;
+        }
+        .ss-form-container, .ss-resp-card {
+          background-color: rgb(255,255,255);
+        }
+        .ss-footer, .ss-response-footer {
+          background-color: rgb(255,255,255);
+        }
+        .ss-grid-row-odd {
+          background-color: rgb(242,242,242);
+        }
+        .ss-form-container, .ss-resp-card {
+          border-color: rgb(212,212,212);
+        }
+        .ss-form-title {
+          text-align: left;
+        }
+        .ss-form-title[dir="rtl"] {
+          text-align: right;
+        }
+        .ss-form-desc {
+          text-align: left;
+        }
+        .ss-form-desc[dir="rtl"] {
+          text-align: right;
+        }
+        .ss-header-image-container {
+          height: 0;
+        }
+        .ss-item {
+          font-size: 1.080rem;
+        }
+        .ss-choices {
+          font-size: 1.000rem;
+        }
+        body {
+          font-family: "Roboto";
+          color: rgb(119,119,119);
+          font-weight: 400;
+          font-size: 1.080rem;
+          font-style: normal;
+        }
+        .ss-record-username-message {
+          font-family: "Roboto";
+          color: rgb(119,119,119);
+          font-weight: 400;
+          font-size: 1.080rem;
+          font-style: normal;
+        }
+        .ss-form-title {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 400;
+          font-size: 2.460rem;
+          font-style: normal;
+        }
+        .ss-confirmation {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 400;
+          font-size: 2.460rem;
+          font-style: normal;
+        }
+        .ss-page-title, .ss-section-title {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 400;
+          font-size: 1.845rem;
+          font-style: normal;
+        }
+        .ss-form-desc, .ss-page-description, .ss-section-description {
+          font-family: "Roboto";
+          color: rgb(140,140,140);
+          font-weight: 400;
+          font-size: 1.080rem;
+          font-style: normal;
+        }
+        .ss-resp-content {
+          font-family: "Roboto";
+          color: rgb(119,119,119);
+          font-weight: 400;
+          font-size: 1.080rem;
+          font-style: normal;
+        }
+        .ss-q-title {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 700;
+          font-size: 1.080rem;
+          font-style: normal;
+        }
+        .ss-embeddable-object-container .ss-q-title {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 700;
+          font-size: 1.845rem;
+          font-style: normal;
+        }
+        .ss-q-help, .ss-q-time-hint {
+          font-family: "Roboto";
+          color: rgb(140,140,140);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: normal;
+        }
+        .ss-choice-label, .video-secondary-text, .ss-gridrow-leftlabel, .ss-gridnumber, .ss-scalenumber, .ss-leftlabel, .ss-rightlabel {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: normal;
+        }
+        .error-message, .required-message, .ss-required-asterisk {
+          font-family: "Roboto";
+          color: rgb(196,59,29);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: normal;
+        }
+        .ss-send-email-receipt {
+          font-family: "Roboto";
+          color: rgb(80,80,80);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: normal;
+        }
+        .ss-password-warning {
+          font-family: "Arial";
+          color: rgb(119,119,119);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: italic;
+        }
+        .disclaimer {
+          font-family: "Arial";
+          color: rgb(119,119,119);
+          font-weight: 400;
+          font-size: 0.850rem;
+          font-style: normal;
+        }
+        .ss-footer-content {
+          font-family: "Arial";
+          color: rgb(80,80,80);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: normal;
+        }
+        .progress-label {
+          font-family: "Roboto";
+          color: rgb(140,140,140);
+          font-weight: 400;
+          font-size: 1.000rem;
+          font-style: normal;
+        }
+        a:link {
+          color: rgb(0,0,238);
+        }
+        a:visited {
+          color: rgb(85,26,139);
+        }
+        a:active {
+          color: rgb(252,0,0);
+        }
+        input[type='text'], input:not([type]), textarea {
+          font-size: 1.000rem;
+        }
+        .error, .required, .errorbox-bad {
+          border-color: rgb(196,59,29);
+        }
+        .jfk-progressBar-nonBlocking .progress-bar-thumb {
+          background-color: rgb(140,140,140);
+        }
+        .ss-logo-image {
+          background-image: url('//ssl.gstatic.com/docs/forms/forms_logo_2_small_dark.png');
+          background-size: 108px 21px;
+          width: 108px;
+          height: 21px;
+        }
+        @media screen and (-webkit-device-pixel-ratio: 2) {
+        .ss-logo-image {
+          background-image: url('//ssl.gstatic.com/docs/forms/forms_logo_2_small_dark_2x.png');
+        }
+        }
+        form {
+          /* Center the form on the page */
+          margin: 0 auto;
+          width: 700px;
+          /* Form outline */
+          padding: 1em;
+          border: 1px solid #CCC;
+          border-radius: 1em;
+          background-color: rgb(255,255,255);
+        }
+        input[type=text] {
+          width: 100%;
+          padding: 12px 10px;
+          margin: 5px 0;
+          box-sizing: border-box;
+        }
+        input[type=submit] {
+          background-color: #f44336; /* red */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 8px;
+        }
+</style>
+    <script type="text/javascript">
+			function OnChangeRadio(radio){
+				value=radio.value
+				if(value=="Yes"){
+					innerHTML = '<div class="ss-form-question errorbox-good" role="listitem">';
+                    innerHTML += '<div dir="auto" class="ss-item  ss-text">';
+                    innerHTML += '<div class="ss-form-entry">';
+                    innerHTML += '<label class="ss-q-item-label" for="entry_2006264978">'
+                    innerHTML += '<div class="ss-q-title">';
+                    innerHTML += '        Please provide the name of the degree (full)';
+                    innerHTML += '    </div>';
+                    innerHTML += '    <div class="ss-q-help ss-secondary-text" dir="auto">[E.g., M.S.Digital Humanities; BA (Major in Digital Humanities); M.A.(Cultural Informatics)]</div></label>';
+                    innerHTML += '    <input type="text" name="entry.2006264978" value="" class="ss-q-short" id="entry_2006264978" dir="auto" aria-label="Please provide the name of the Degree (full) [E.g., M.S.Digital Humanities; BA (Major in Digital Humanities); M.A.(Cultural Informatics)] " title="">';
+                    innerHTML +='     <div class="error-message" id="194698249_errorMessage"></div>';
+                    innerHTML += '</div>';
+                    innerHTML += '</div>';
+                    innerHTML += '</div>';
+                    innerHTML += ' <br/>';
+					document.getElementById('programName').innerHTML=innerHTML;
+					document.getElementById('spName').innerHTML='';
+				}
+				else if(value=="No"){
+					innerHTML= '<div class="ss-form-question errorbox-good" role="listitem">';
+                    innerHTML += '<div dir="auto" class="ss-item  ss-radio">';
+                    innerHTML += '<div class="ss-form-entry">';
+                    innerHTML += '<label class="ss-q-item-label" for="entry_146609521">';
+                    innerHTML += '    <div class="ss-q-title">';
+                    innerHTML += '       Does the program issue a specialization?';
+                    innerHTML += '    </div>';
+                    innerHTML += '    <div class="ss-q-help ss-secondary-text" dir="auto"></div>';
+                    innerHTML += '</label>';
+                    innerHTML += '<input type="radio" name="entry.1289377365" onclick="onChangeRadioSP(this)" value="Yes" id="group_1289377365_1" role="radio" class="ss-q-radio" aria-label="Yes"></span>';
+                    innerHTML += '    <span class="ss-choice-label">Yes</span>';
+                    innerHTML += '<input type="radio" name="entry.1289377365" onclick="onChangeRadioSP(this)" value="No" id="group_1289377365_2" role="radio" class="ss-q-radio" aria-label="No"></span>';
+                    innerHTML += '    <span class="ss-choice-label">No</span>';
+                    innerHTML += '<div class="error-message" id="146609521_errorMessage"></div>';
+                    innerHTML += '</div>';
+                    innerHTML += '</div>';
+                    innerHTML += '</div>';
+                    innerHTML += '<br/>';
+                    document.getElementById('programName').innerHTML=innerHTML;
+				}
+			}
+			function onChangeRadioSP(radio){
+				value2=radio.value;
+				innerHTML='<br />';
+				if(value2=="Yes"){
+					 innerHTML='   <div class="ss-form-question errorbox-good" role="listitem">';
+                     innerHTML += '   <div dir="auto" class="ss-item  ss-text">';
+                     innerHTML += '       <div class="ss-form-entry">';
+                     innerHTML += '           <label class="ss-q-item-label" for="entry_1938287849">';
+                     innerHTML += '               <div class="ss-q-title">';
+                     innerHTML += '                   Please provide the name of the specialization';
+                     innerHTML += '               </div>';
+                     innerHTML += '               <div class="ss-q-help ss-secondary-text" dir="auto">[E.g., Specialization in Digital Humanities in the Applied Computer Science M.Sc; MA in IS in the Digital Humanities track]</div></label>';
+                     innerHTML += '               <input type="text" name="entry.1938287849" value="" class="ss-q-short" id="entry_1938287849" dir="auto" aria-label="Please provide the name of the specialization [E.g., Specialization in Digital Humanities in the Applied Computer Science M.Sc; MA in IS in the Digital Humanities track] " title="">';
+                     innerHTML += '               <div class="error-message" id="702306140_errorMessage"></div>';
+                     innerHTML += '       </div>';
+                     innerHTML += '   </div>';
+                     innerHTML += '</div>';
+                    innerHTML += '<br/>';
+					document.getElementById('spName').innerHTML= innerHTML;
+				}
+				if(value2=="No"){
+                    innerHTML += '<div class="ss-form-question errorbox-good" role="listitem">';
+                    innerHTML += '<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">';
+                    innerHTML += '<label class="ss-q-item-label" for="entry_1729298215"><div class="ss-q-title">Please provide the name used for the program';
+                    innerHTML += '</div>';
+                    innerHTML += '<div class="ss-q-help ss-secondary-text" dir="auto">[E.g., Program in Digital Contents and information Studies; Diploma in Digital Humanities (60 ECTS)]</div></label>';
+                    innerHTML += '<input type="text" name="entry.1729298215" value="" class="ss-q-short" id="entry_1729298215" dir="auto" aria-label="Please provide the name used for the program [E.g., Program in Digital Contents and information Studies; Diploma in Digital Humanities (60 ECTS)] " title="">';
+                    innerHTML += '<div class="error-message" id="855605914_errorMessage"></div>';
+                    innerHTML += '</div></div></div>';
+                    innerHTML += '<br/>';
+					document.getElementById('spName').innerHTML=innerHTML;
+				}
+			}
+</script>
+
+
+
+</head>
+<body>
+
+<ifram>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOYb6iYB5JGMQ9Bi0Z7ZgfSzs3-9kUltCPxpyzmX9NJn8XMw/formResponse" method="POST" id="ss-form" target="_self" autocomplete="on">
+    <ol role="list" class="ss-question-list" style="padding-left: 0;">
+
+        <img align="right" src="https://ischools.org/resources/Pictures/Hompage%20pictures/ischoolslogo.jpg" height="90" width="90">
+        <br/>
+        <H2>Planing DH Program Registry</H2>
+        Note: If you plan to have a DIGITAL HUMANITIES (DH) program in the future, please answer the following questions:
+        <br/>
+        <br/>
+
+        <!--University Name-->
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item ss-item-required ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_2015391830">
+                    <div class="ss-q-title">
+                        University name
+                        <span class="ss-required-asterisk" aria-hidden="true">*</span>
+                    </div>
+                    <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="text" name="entry.2015391830" value="" class="ss-q-short" id="entry_2015391830" dir="auto" aria-label="University name  " aria-required="true" required="true" title="">
+                    <div class="error-message" id="787701779_errorMessage"></div>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <!--Full title of the program-->
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item ss-item-required ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_541244626">
+                        <div class="ss-q-title">
+                            Full title of the program
+                            <span class="ss-required-asterisk" aria-hidden="true">*</span>
+                        </div>
+                        <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="text" name="entry.541244626" value="" class="ss-q-short" id="entry_541244626" dir="auto" aria-label="Full title of the program  " aria-required="true" required="" title="">
+                    <div class="error-message" id="78620707_errorMessage"></div>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <!--URL of the program webpage-->
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item ss-item-required ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1975985126">
+                        <div class="ss-q-title">
+                            URL of the program, if any
+                        </div>
+                        <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="text" name="entry.1975985126" value="" class="ss-q-short" id="entry_1975985126" dir="auto" aria-label="URL of the program webpage  " title="">
+                    <div class="error-message" id="2099332911_errorMessage"></div>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <!--What type of unit offers the DH program?
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item  ss-radio">
+                <label class="ss-q-item-label" for="entry_1031673877">
+                    <div class="ss-q-title">
+                        What type of unit offers the DH program?
+                    </div>
+                    <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                </label>
+                <input type="radio" name="entry.1159921315" value="iSchool (Only)" id="group_1159921315_1" role="radio" class="ss-q-radio" aria-label="iSchool (Only)"></span>
+                    <span class="ss-choice-label">iSchool (Only)</span> <br/>
+                <input type="radio" name="entry.1159921315" value="iSchool (Joint)" id="group_1159921315_2" role="radio" class="ss-q-radio" aria-label="iSchool (Joint)"></span>
+                    <span class="ss-choice-label">iSchool (Joint)</span> <br/>
+                <input type="radio" name="entry.1159921315" value="Other School/College" id="group_1159921315_3" role="radio" class="ss-q-radio" aria-label="Other School/College"></span>
+                    <span class="ss-choice-label">Other School/College</span> <br/>
+                <input type="radio" name="entry.1159921315" value="Center" id="group_1159921315_4" role="radio" class="ss-q-radio" aria-label="Center"></span>
+                    <span class="ss-choice-label">Center</span> <br/>
+               <input type="radio" name="entry.1159921315" value="__other_option__" id="group_1159921315_8" role="radio" class="ss-q-radio ss-q-other-toggle"></span>
+                    <span class="ss-choice-label">other (please explain):</span></label>
+                    <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.1159921315.other_option_response" value="" class="ss-q-other" id="entry_1159921315_other_option_response" dir="auto" aria-label="other"></span>
+                <div class="error-message" id="1031673877_errorMessage"></div>
+            </div>
+        </div>
+        <br/>
+        -->
+        <!--What is the name of the unit that offers the DH program? -->
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item ss-item-required ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_314103936">
+                        <div class="ss-q-title">
+                            What will be the name of the unit that offers the DH program
+                            <span class="ss-required-asterisk" aria-hidden="true">*</span>
+                        </div>
+                        <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="text" name="entry.314103936" value="" class="ss-q-short" id="entry_314103936" dir="auto" aria-label="What is the name of the unit that offers the DH program?  " aria-required="true" required="" title="">
+                    <div class="error-message" id="1905939171_errorMessage"></div>
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <!--What year was the program started (YYYY)?-->
+
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item ss-item-required ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_826389004">
+                        <div class="ss-q-title">
+                            What year was the program started (YYYY)?
+                            <span class="ss-required-asterisk" aria-hidden="true">*</span>
+                        </div>
+                        <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="text" name="entry.826389004" value="" class="ss-q-short" id="entry_826389004" pattern="^(19\d{2}|20\d{2})$" dir="auto" aria-label="What year was the program started (YYYY)?  Enter a valid year" aria-required="true" required="" pattern=".*^(19\d{2}|20[0-1]\d)$.*" title="Enter a valid year">
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <!-- What year was the program started (YYYY)? -->
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item  ss-radio">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1673245283">
+                        <div class="ss-q-title">
+                            Will the program issue a credential in DH (e.g., degree or certificate)?  <br />
+                            (Once you click the Yes or No, more options will open.)
+                        </div>
+                        <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="radio" name="entry.1891647105" onclick="OnChangeRadio(this)" value="Yes" id="group_1891647105_1" role="radio" class="ss-q-radio" aria-label="Yes" ></span>
+                        <span class="ss-choice-label">Yes</span>
+                    <input type="radio" name="entry.1891647105" onclick="OnChangeRadio(this)" value="No" id="group_1891647105_2" role="radio" class="ss-q-radio" aria-label="No"></span>
+                        <span class="ss-choice-label">No</span>
+                    <div class="error-message" id="1673245283_errorMessage"></div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div id="programName"></div>
+        <div id="spName"></div>
+        <br/>
+
+        <!-- Please provide the name of the Degree (full)-->
+
+
+
+        <!-- Education level (2-1): Does the program issue a Credential? -->
+
+        <!-- Please provide the name of the specialization -->
+
+
+        <!-- Please provide the name used for the program-->
+
+        <!-- Contact name-->
+        <div class="ss-form-question errorbox-good" role="listitem">
+        <div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
+        <label class="ss-q-item-label" for="entry_708209580"><div class="ss-q-title">Contact name
+        <span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+        <div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+        <input type="text" name="entry.708209580" value="" class="ss-q-short" id="entry_708209580" dir="auto" aria-label="Contact name   " aria-required="true" required="" title="">
+        <div class="error-message" id="11713245_errorMessage"></div>
+        </div></div></div>
+        <br/>
+
+        <!--Contact email-->
+
+        <div class="ss-form-question errorbox-good" role="listitem">
+        <div dir="auto" class="ss-item ss-item-required ss-text"><div class="ss-form-entry">
+        <label class="ss-q-item-label" for="entry_962544924"><div class="ss-q-title">Contact email
+        <span class="ss-required-asterisk" aria-hidden="true">*</span></div>
+        <div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+        <input type="text" name="entry.962544924" value="" class="ss-q-short" id="entry_962544924" dir="auto" aria-label="Contact email " pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+" aria-required="true" required="" title="">
+        <div class="error-message" id="26644895_errorMessage"></div>
+        </div></div></div>
+        <br/>
+
+        <!-- Does the program collaborate with other unit(s)?-->
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item  ss-text">
+                <div class="ss-form-entry">
+                      <label class="ss-q-item-label" for="entry_2053457054">
+                     <div class="ss-q-title">
+                      Will the program collaborate with other unit(s) outside of your iSchool? If so, please explain.
+                     </div>
+                     <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                      </label>
+                     <input type="text" name="entry.2053457054" value="" class="ss-q-short" id="entry_2053457054" dir="auto" aria-label="Does the program collaborate with other unit(s)? If so, please explain.  " title="">
+                      <div class="error-message" id="197634280_errorMessage"></div>
+                     </div>
+                     </div>
+                    </div>
+                   <br/>
+
+
+        <div class="ss-form-question errorbox-good" role="listitem">
+            <div dir="auto" class="ss-item  ss-text">
+                <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1294644329">
+                        <div class="ss-q-title">
+                            Do you have any comments?
+                        </div>
+                        <div class="ss-q-help ss-secondary-text" dir="auto"></div>
+                    </label>
+                    <input type="text" name="entry.1294644329" value="" class="ss-q-short" id="entry_1294644329" dir="auto" aria-label="Do you have any comments?  " title="">
+                    <div class="error-message" id="668796076_errorMessage"></div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <!-- Please provide the name used for the program-->
+
+        <input type="hidden" name="draftResponse" value="[null,null,&quot;9018316930205256251&quot;]">
+        <input type="hidden" name="pageHistory" value="0">
+
+
+        <input type="hidden" name="fbzx" value="9018316930205256251">
+        <div class="ss-send-email-receipt" style="margin-bottom: 4px;" dir="ltr">
+            <label for="emailReceipt" style="display:inline;"></label>
+        </div>
+        <div class="ss-item ss-navigate">
+            <table id="navigation-table">
+                <tbody>
+                <tr>
+                    <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                        <input type="submit" name="submit" value="Submit" id="ss-submit" class="jfk-button jfk-button-action">
+                    </td>
+                    <td id="progress-container">
+                        <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block"></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div></ol></form>
+
+
+</ifram>
+</body>
+</html>
